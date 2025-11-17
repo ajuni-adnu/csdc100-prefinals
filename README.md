@@ -1,2 +1,2 @@
 # csdc100-prefinals
-![Header](github-header-banner.png)
+![Header](./github-header-banner.png)
