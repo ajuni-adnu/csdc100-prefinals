@@ -202,37 +202,45 @@
 <!-- Auto light or dark mode -->
 
 <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        document.querySelectorAll('.bg-white').forEach(el => {
-          el.classList.remove('bg-white');
-          el.classList.add('bg-dark');
-        });
-        document.documentElement.setAttribute("data-bs-theme", "dark");
-        console.log("HI");
-      }
+window.addEventListener('DOMContentLoaded', (event) => {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Determine which theme to use on first load
+  const themeToUse = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+
+  applyTheme(themeToUse);
+});
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+
+    document.querySelectorAll('.bg-white').forEach(el => {
+      el.classList.replace('bg-white', 'bg-dark');
     });
 
-    /* -- Dark or light mode switch */
+  } else {
+    document.documentElement.setAttribute("data-bs-theme", "light");
 
-    function switchMode(){
-      document.getElementById('lightdarkMode').addEventListener('click',()=>{
-        if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-            document.documentElement.setAttribute('data-bs-theme','light')
-            document.querySelectorAll('.bg-dark').forEach(el => {
-              el.classList.remove('bg-dark');
-              el.classList.add('bg-white');
-            });
-        }
-        else {
-            document.documentElement.setAttribute('data-bs-theme','dark')
-            document.querySelectorAll('.bg-white').forEach(el => {
-              el.classList.remove('bg-white');
-              el.classList.add('bg-dark');
-            });
-        }
-      })}
+    document.querySelectorAll('.bg-dark').forEach(el => {
+      el.classList.replace('bg-dark', 'bg-white');
+    });
+  }
+}
+    /* Dark or light mode switch */
+function switchMode() {
+  document.getElementById('lightdarkMode').addEventListener('click', () => {
+
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+
+    const newTheme = isDark ? 'light' : 'dark';
+    applyTheme(newTheme);
+
+    // 💾 Save selection
+    localStorage.setItem('theme', newTheme);
+  });
+}
   </script>
   </body>
 </html>
