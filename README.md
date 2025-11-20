@@ -1,5 +1,5 @@
 # GenAI info-lobby.
-![Header](https://github.com/ajuni-adnu/csdc100-prefinals/tree/main/github/github-header-banner.png)
+![Header](https://github.com/ajuni-adnu/csdc100-prefinals/blob/main/github/github-header-banner.png)
 
 
 ### Table of contents
@@ -35,5 +35,5 @@ git clone https://github.com/ajuni-adnu/csdc100-prefinals.git
 - ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) Bootstrap v5.3.8
 - ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white) jQuery
 ## Screenshots
-![This is an alt text.](github-header-banner.png "This is a sample image.")
+![This is an alt text.](https://github.com/ajuni-adnu/csdc100-prefinals/blob/main/github/github-header-banner.png "This is a sample image.")
 
