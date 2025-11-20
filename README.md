@@ -1,5 +1,5 @@
 # GenAI info-lobby.
-![Header](https://github.com/ajuni-adnu/csdc100-prefinals/blob/main/github-header-banner.png)
+![Header](https://github.com/ajuni-adnu/csdc100-prefinals/tree/main/github/github-header-banner.png)
 
 
 ### Table of contents
