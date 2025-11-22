@@ -1,3 +1,7 @@
+if (alreadyOpen) {
+  Modal.getInstance(alreadyOpen).hide();
+}
+
 // Lobby typing "animation." https://css-tricks.com/snippets/css/typewriter-effect/ https://codepen.io/hi-im-si/pen/ALgzqo
 
 var TxtType = function(el, toRotate, period) {
@@ -57,21 +61,6 @@ var TxtType = function(el, toRotate, period) {
         document.body.appendChild(css);
     };
 
-// Typewriter script for  buttons.
-
-var i = 0;
-var txt = 'A type of artificial intelligence that learns patterns from huge amounts of data and then creates new content—such as text, images, music, or code—based on what it learned.';
-var speed = 50;
-function typeWriter() {
-  
-  if (i < txt.length) {
-    document.getElementById("first-humanQuestion").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-  document.getElementById("waitScreen").remove();
-}
-
 // Dark or light mode switch
 
 function switchMode() {
@@ -116,4 +105,8 @@ function applyTheme(theme) {
   }
 }
 
+// Popover
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 

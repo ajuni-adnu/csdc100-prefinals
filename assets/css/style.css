@@ -18,7 +18,6 @@ html, body, * {
   transition: background-color 0.35s ease;
 }
 
-
 .masked-text {
     font-size: 8rem;
     font-weight: bold;
