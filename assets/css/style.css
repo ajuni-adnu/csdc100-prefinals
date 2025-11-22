@@ -1,0 +1,42 @@
+/* Become columns for smaller screens */
+
+@media (max-width: 1199.98px) {
+  #questionsRow {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Smooth transition for dark or light mode */
+
+.bg-white, 
+.bg-dark {
+  transition: background-color 0.35s ease;
+}
+
+html, body, * {
+  transition: background-color 0.35s ease;
+}
+
+
+.masked-text {
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://miro.medium.com/v2/resize:fit:1100/format:webp/1*_zqJUXJaDneHRrXeXtR5vQ.webp'); 
+    background-size: 200%; /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
